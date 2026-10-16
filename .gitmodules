@@ -1,0 +1,3 @@
+[submodule "qchem"]
+	path = qchem
+	url = https://github.com/icanswim/qchem.git
