@@ -1,0 +1,43 @@
+[project]
+name = "qchem-lmm"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "qchem", 
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126/"
+explicit = true
+
+[[tool.uv.index]]
+name = "pyg-cu126"
+url = "https://data.pyg.org/whl/torch-2.12.0+cu126.html"
+explicit = true
+
+[tool.uv.workspace]
+members = ["qchem", "qchem/cosmosis"]
+
+[tool.uv]
+package = false
+environments = [
+    "sys_platform == 'linux' and platform_machine == 'x86_64' and python_version == '3.12'"
+]
+
+[tool.uv.sources]
+qchem = { workspace = true }
+cosmosis = { workspace = true }
+torch = { index = "pytorch-cu126" }
+torchvision = { index = "pytorch-cu126" }
+torchaudio = { index = "pytorch-cu126" }
+pyg-lib = { index = "pyg-cu126" }
+torch-scatter = { index = "pyg-cu126" }
+torch-sparse = { index = "pyg-cu126" }
+torch-cluster = { index = "pyg-cu126" }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.4",
+]
