@@ -1,3 +1,4 @@
 [submodule "qchem"]
 	path = qchem
 	url = https://github.com/icanswim/qchem.git
+	branch = submod-lmm
