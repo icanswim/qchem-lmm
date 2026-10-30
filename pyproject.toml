@@ -9,6 +9,15 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "qchem",
+    "torch==2.12.1+cu126",
+    "torchvision==0.27.1+cu126",
+    "torchaudio==2.11.0",
+    "transformers>=5.17.0",
+    "peft>=0.21.2",
+    "accelerate>=1.14.0",
+    "cuda-bindings>=12.9.4,<13.0.0",
+    "cuda-pathfinder>=1.8.0",
+    "bitsandbytes>=0.50.2",
 ]
 
 [tool.uv]
@@ -60,4 +69,5 @@ build-backend = "uv_build"
 dev = [
     "ipykernel>=7.4.0",
     "jupyterlab>=4.6.4",
+    "ipywidgets>=8.1.5",
 ]
